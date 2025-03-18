@@ -29,7 +29,7 @@
   /*Start Hero Section  */
   .hero-section {
     /* position: relative; */
-    background-image: url(../img/banner-bg.png);
+    background-image: url(img/banner-bg.png);
     background-size: cover;
     height: 100vh;
     display: flex;
