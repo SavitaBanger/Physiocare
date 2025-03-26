@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style/style.css">
 
 </head>
 
@@ -56,7 +56,7 @@
             </ul>
 
             <div class="text-end ms-lg-auto">
-              <button type="button" class="btn btn-outline-primary me-2">Login</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
               <button type="button" class="btn blue-bg text-white">Sign-up</button>
             </div>
           </div>
@@ -74,7 +74,10 @@
             <h1 class="display-4 fw-bold blue-text">Revitalize Your Health with Expert Physiotherapy</h1>
             <p class="lead mt-3 blue-text">Personalized care to restore mobility, relieve pain, and improve your overall
               well-being.</p>
-            <a href="#services" class="btn mt-4 blue-bg">Book an Appointment</a>
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#preAssessmentModal">
+            Pre-Assessment
+            </button>
           </div>
         </div>
       </div>
@@ -185,9 +188,10 @@
           <div class="col-md-4">
             <div class="video-card p-3">
               <div class="position-relative">
-                <div class="embed-responsive embed-responsive-21by9">
-                  <iframe class="embed-responsive-item" src="/img/videoplayback.mp4"></iframe>
-                </div>
+              <video width="100%" height="100%" controls>
+                        <source src="img/testing.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 <div class="video-overlay">
                   <i class="bi bi-play-fill"></i>
                 </div>
@@ -199,9 +203,10 @@
           <div class="col-md-4">
             <div class="video-card p-3">
               <div class="position-relative">
-                <div class="embed-responsive embed-responsive-21by9">
-                  <iframe class="embed-responsive-item" src="/img/videoplayback.mp4"></iframe>
-                </div>
+              <video width="100%" height="100%" controls>
+                        <source src="img/testing.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 <div class="video-overlay">
                   <i class="bi bi-play-fill"></i>
                 </div>
@@ -213,9 +218,10 @@
           <div class="col-md-4">
             <div class="video-card p-3">
               <div class="position-relative">
-                <div class="embed-responsive embed-responsive-21by9">
-                  <iframe class="embed-responsive-item" src="/img/videoplayback.mp4"></iframe>
-                </div>
+              <video width="100%" height="100%" controls>
+                        <source src="img/testing.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 <div class="video-overlay">
                   <i class="bi bi-play-fill"></i>
                 </div>
@@ -227,9 +233,7 @@
       </div>
     </section>
 
-
     <!-- Start Review Section -->
-      
     <div class="container text-center my-5">
       <h3>Join PhysioCare to feel better.</h3>
       <div id="testimonialCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
@@ -277,7 +281,6 @@
       </div>
   </div>
     <!-- End Review Section -->
-
 
     <!-- FAQ Section -->
     <section id="faq" class="container py-5">
@@ -359,6 +362,99 @@
         <p class="mb-0 blue-bg text-center py-2">© 2025 PhysioCare. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- Start popUp's -->
+     <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="login.php" method="POST">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember Me</label>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Login</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p class="text-center w-100">Don't have an account? <a href="#">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- End Login Popup -->
+
+   <!-- Pre-Assessment Modal -->
+   <div class="modal fade" id="preAssessmentModal" tabindex="-1" aria-labelledby="preAssessmentLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="preAssessmentLabel">Pre-Assessment Form</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="symptoms" class="form-label">Describe Your Symptoms</label>
+                            <textarea class="form-control" id="symptoms" rows="4" placeholder="Briefly describe your condition and symptoms" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="history" class="form-label">Medical History</label>
+                            <textarea class="form-control" id="history" rows="4" placeholder="List any previous injuries, surgeries, or medical conditions"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="painLevel" class="form-label">Pain Level (1-10)</label>
+                            <input type="number" class="form-control" id="painLevel" min="1" max="10" placeholder="Rate your pain level" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mobility" class="form-label">Mobility Issues</label>
+                            <select class="form-select" id="mobility" required>
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="None">No mobility issues</option>
+                                <option value="Mild">Mild difficulty</option>
+                                <option value="Moderate">Moderate difficulty</option>
+                                <option value="Severe">Severe difficulty</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="goal" class="form-label">What are your therapy goals?</label>
+                            <textarea class="form-control" id="goal" rows="3" placeholder="Describe your recovery goals"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Assessment</button>
+                    </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- End Pre-assesment-popup -->
+
+
+
 
   </main>
   <script src="main.js"></script>
