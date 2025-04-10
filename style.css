@@ -7,7 +7,9 @@
 .blue-bg {
   background-color: #6cb2eb;
 }
-
+.bg-dark-blue{
+  background-color: #180b3d;
+}
 .blue-text {
   color: #180b3d;
 }
@@ -29,7 +31,7 @@
   /*Start Hero Section  */
   .hero-section {
     /* position: relative; */
-    background-image: url(img/The-background.png);
+    background-image: url(../img/The-background.png);
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -205,9 +207,9 @@
     padding: 4rem 0;
   }
 
-  body {
+  /* body {
     background-color: grey;
-  }
+  } */
 
   .hero-section {
     /* background: url('background.jpg') no-repeat center center/cover; */
@@ -251,4 +253,8 @@
     color: black;
   }
 
+}
+
+@media screen and (min-width: 1900px) {
+  .home {}
 }
