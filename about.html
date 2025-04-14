@@ -1,1 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Physiocare</title>
+  <!-- Bootstrap link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- font awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Style css link -->
+  <link rel="stylesheet" href="style/style.css">
+  <style>
+    .banner-section {
+    background: url('/img/banner-bg.png') no-repeat center center;
+    background-size: cover;
+    min-height: 400px;
+    position: relative;
+  }
+
+  .banner-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4); /* Optional overlay */
+    z-index: 1;
+  }
+
+  .banner-section .container {
+    position: relative;
+    z-index: 2;
+  }
+
+    .bg-light-blue {
+      background-color: #e7f2f8;
+    }
+    .rounded-img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+     <!-- Start Header Section -->
+     <div class="top-bar blue-bg">
+      <p class="mb-0 text-white">Learn More</p>
+    </div>
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img src="img/blue-logo2.png" alt="blue-logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-md-auto gap-2">
+              <li class="nav-item rounded">
+                <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house me-1"></i>Home</a>
+              </li>
+              <li class="nav-item rounded">
+                <a class="nav-link" href="about.html"><i class="fa-solid fa-user me-1"></i></i>About</a>
+              </li>
+              <li class="nav-item rounded">
+                <a class="nav-link" href="#"><i class="fa-solid fa-blog me-1"></i>Blogs</a>
+              </li>
+              <li class="nav-item rounded">
+                <a class="nav-link" href="contact.html"><i class="fa-solid fa-phone me-1"></i>Contact</a>
+              </li>
+              <!-- <li class="nav-item dropdown rounded">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill me-2"></i>Profile</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Account</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                  </li> -->
+            </ul>
+
+            <div class="text-end ms-lg-auto">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button> -->
+           
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- End Header Section -->
+    
+
+    <section class="banner-section d-flex align-items-center text-white text-center">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Welcome to Physiocare</h1>
+    <p class="lead">Your trusted partner in recovery and wellness</p>
+  </div>
+</section>
+
+ <section class="features-section py-5 bg-white">
+  <div class="container text-center">
+    <h4 class="fw-bold">We Provided the best <span class="text-success">Checking Engine</span> for our patients</h4>
+    <p class="text-muted">Expense May Qualify Under HSA or Employee HP</p>
+    <div class="row mt-4 g-4 justify-content-center">
+      <div class="col-6 col-md-2">
+        <img src="https://img.icons8.com/ios/50/heartbeat.png" class="mb-2" alt="Blood Pressure" />
+        <p>Blood Pressure</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <img src="https://img.icons8.com/ios/50/like--v1.png" class="mb-2" alt="Heart Rate" />
+        <p>Heart Rate</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <img src="https://img.icons8.com/ios/50/oxygen-tank.png" class="mb-2" alt="Oxygen" />
+        <p>Oxygen</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <img src="https://img.icons8.com/ios/50/lungs.png" class="mb-2" alt="Respiratory Rate" />
+        <p>Respiratory Rate</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <img src="https://img.icons8.com/ios/50/heart-health.png" class="mb-2" alt="Cardio" />
+        <p>Cardiovascular</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <img src="https://img.icons8.com/ios/50/weight.png" class="mb-2" alt="BMI" />
+        <p>BMI</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Mission Section -->
+  <section class="section bg-light-blue">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="img/mission.png" class="img-fluid rounded" alt="Mission">
+        </div>
+        <div class="col-md-6">
+          <h3>Our Mission</h3>
+          <p>At Physiocare, our mission is to enhance the quality of life for our patients by providing exceptional physiotherapy care and empowering them to live pain-free and active lives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section text-center">
+    <div class="container">
+      <h2>Meet Our Team</h2>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <img src="https://via.placeholder.com/120" class="rounded-img mb-2" alt="Team Member">
+          <h5>Dr. Amanpreet Kaur</h5>
+          <p>Chief Physiotherapist</p>
+        </div>
+        <div class="col-md-4">
+          <img src="https://via.placeholder.com/120" class="rounded-img mb-2" alt="Team Member">
+          <h5>Dr. Rajiv Sharma</h5>
+          <p>Rehabilitation Expert</p>
+        </div>
+        <div class="col-md-4">
+          <img src="https://via.placeholder.com/120" class="rounded-img mb-2" alt="Team Member">
+          <h5>Dr. Simran Kaur</h5>
+          <p>Sports Injury Specialist</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="section bg-light">
+    <div class="container text-center">
+      <h2>Why Choose Physiocare?</h2>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <h5>Personalized Treatment</h5>
+          <p>Each plan is customized to your needs and goals.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Modern Equipment</h5>
+          <p>We use the latest technology for effective recovery.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Experienced Therapists</h5>
+          <p>Our staff is certified and highly experienced in physiotherapy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!--Start  Footer Section-->
+   <footer id="contact" class="text-white pt-4 rounded-top-5">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h5>Contact Us</h5>
+            <p>Email: info@physiocare.com</p>
+            <p>Phone: +123456789</p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Home</a></li>
+              <li><a href="#services" class="text-white">Services</a></li>
+              <li><a href="#music" class="text-white">Music Therapy</a></li>
+              <li><a href="#contact" class="text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Follow Us</h5>
+            <a href="javascript:void(0);" class="text-white me-3"><i class="fa-brands fa-facebook"></i></a>
+            <a href="javascript:void(0);" class="text-white me-3"><i class="fa-brands fa-twitter"></i></a>
+            <a href="javascript:void(0);" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+      </div>
+      <div class="copyright">
+        <p class="mb-0 blue-bg text-center py-2">© 2025 PhysioCare. All rights reserved.</p>
+      </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
