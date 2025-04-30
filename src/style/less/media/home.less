@@ -1,0 +1,52 @@
+@size-md :~"(min-width : 768px)"; // 768
+@size-lg :~"(min-width : 1024px)"; // 1024
+@size-xl :~"(min-width : 1366px)"; //1366
+@size-xll :~"(min-width : 1500px)"; // 1500
+@size-xlll :~"(min-width : 1600px)"; // 1600
+@size-xllll: ~"(min-width : 1900px)"; // 1900
+
+@media @size-md {
+    .home{
+        // Start Banner
+        .banner{
+            h1{
+                font-size: 28px;
+            }
+        } 
+        // End Banner
+
+        // Work Section
+        .work{
+            .icon-circle {
+                margin: 0 auto 1rem auto;
+              }
+              section h5, section p {
+                text-align: center;
+              }
+              .row > div {
+                align-items: center !important;
+              }
+        }
+        // End work Section
+      }
+}
+
+@media @size-lg {
+   // Start Banner
+   .banner{
+    h1{
+        font-size: 33px;
+    }
+} 
+// End Banner
+}
+
+// @media @size-xl {
+//   .home{
+   
+//   }
+// }
+
+// @media @size-xll {
+  
+// }
