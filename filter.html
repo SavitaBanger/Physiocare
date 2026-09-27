@@ -2,555 +2,830 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Leadership Team</title>
+  <title>Leadership Team</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <style>
+  /* Start Header */
+  body {
+    margin: 0;
+    background: #05071f;
+  }
+
+  .navbar {
+    background: #1b1a36;
+    border-radius: 40px;
+    margin: 12px;
+  }
+
+  .nav-box {
+    padding: 8px 18px;
+  }
+
+  .navbar-brand {
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  .nav-link {
+    color: #b9b8d0 !important;
+    padding: 10px 14px !important;
+  }
+
+  .nav-link.active,
+  .nav-link:hover {
+    color: #fff !important;
+  }
+
+  .get-btn {
+    background: #554bd5;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 24px;
+    border: 0;
+  }
+
+  /* Main Dropdown */
+.dropdown-menu {
+    background: #202442;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 0;
+    min-width: 225px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Dropdown Items */
+.dropdown-menu .dropdown-item,
+.dropdown-menu .nav-link {
+    color: #c8c9dd;
+    font-size: 17px;
+    padding: 12px 22px;
+    background: transparent;
+    transition: 0.2s ease;
+}
+
+/* Hover */
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .nav-link:hover {
+    color: #fff;
+    background: transparent;
+}
+
+/* Nested Dropdown */
+.dropend {
+    position: relative;
+}
+
+.dropend > .dropdown-menu {
+    top: -12px;
+    left: 100%;
+    margin-left: 0;
+    min-width: 214px;
+}
+
+/* Nested arrow */
+.dropend > .dropdown-toggle::after {
+    float: right;
+    margin-top: 7px;
+}
+
+/* Remove Bootstrap focus background */
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .nav-link:focus {
+    background: transparent;
+    color: #fff;
+}
+
+/* Main dropdown arrow */
+.nav-link.dropdown-toggle::after {
+    margin-left: 8px;
+}
+
+/* 
+  .dropend .dropdown-toggle {
+    color: salmon;
+    margin-left: 1em;
+  } */
+
+  /* .dropdown-item:hover {
+  background-color: lightsalmon;
+  color: #fff;
+}
+.dropdown .dropdown-menu {
+  display: none;
+}
+.dropdown:hover > .dropdown-menu,
+.dropend:hover > .dropdown-menu {
+  display: block;
+  margin-top: 0.125em;
+  margin-left: 0.125em;
+} */
+
+  .header {
+    padding-top: 15px;
+  }
+
+  /* End Header */
+
+
+
+
+  /* Start Leadership Section */
   .leadership {
-  background: #05061d;
-  padding: 30px 15px 45px;
-  color: #fff;
-  overflow: hidden;
-}
-
-.leadership-title {
-  text-align: center;
-  font-size: 28px;
-  font-weight: 400;
-  margin-bottom: 30px;
-}
-
-.team-slider {
-  overflow: hidden;
-}
-
-.team-track {
-  display: flex;
-  transition: transform 0.6s ease;
-}
-
-.team-slide {
-  flex: 0 0 100%;
-  padding: 0 10px;
-}
-
-.team-card {
-  background: #121326;
-  border: 1px solid #292b46;
-  border-radius: 22px;
-  overflow: hidden;
-  height: 100%;
-  text-align: center;
-}
-
-.team-img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  display: block;
-}
-
-.team-content {
-  padding: 24px 20px 27px;
-}
-
-.team-name {
-  font-size: 22px;
-  margin-bottom: 6px;
-  font-weight: 500;
-}
-
-.team-role {
-  color: #5550f6;
-  font-size: 17px;
-  margin-bottom: 20px;
-}
-
-.team-description {
-  color: #a8a9b9;
-  font-size: 15px;
-  line-height: 1.6;
-  min-height: 50px;
-  margin-bottom: 25px;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.social-links a {
-  width: 45px;
-  height: 45px;
-  background: #191b3b;
-  color: #514cff;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 19px;
-  transition: 0.3s;
-}
-
-.social-links a:hover {
-  background: #514cff;
-  color: #fff;
-  transform: translateY(-3px);
-}
-
-/* =========================
-   Slider Dots
-========================= */
-
-.team-dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: 35px;
-  width: 100%;
-}
-
-.team-dot {
-  display: block;
-  width: 9px;
-  height: 9px;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  border-radius: 50%;
-  background: #2b2d68;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.team-dot.active {
-  background: #5b56ff;
-  transform: scale(1.15);
-}
-
-
-  @media (min-width: 768px){
-.leadership {
-    padding: 35px 20px 50px;
+    background: #05061d;
+    padding: 30px 15px 45px;
+    color: #fff;
+    overflow: hidden;
   }
 
   .leadership-title {
-    font-size: 30px;
-    margin-bottom: 40px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  .team-slider {
+    overflow: hidden;
+  }
+
+  .team-track {
+    display: flex;
+    transition: transform 0.6s ease;
   }
 
   .team-slide {
-    flex: 0 0 50%;
-    padding: 0 12px;
+    flex: 0 0 100%;
+    padding: 0 10px;
+  }
+
+  .team-card {
+    background: #121326;
+    border: 1px solid #292b46;
+    border-radius: 22px;
+    overflow: hidden;
+    height: 100%;
+    text-align: center;
   }
 
   .team-img {
-    height: 210px;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
   }
 
   .team-content {
-    padding: 25px 24px 28px;
+    padding: 24px 20px 27px;
   }
 
   .team-name {
-    font-size: 23px;
+    font-size: 22px;
+    margin-bottom: 6px;
+    font-weight: 500;
   }
+
+  .team-role {
+    color: #5550f6;
+    font-size: 17px;
+    margin-bottom: 20px;
   }
+
+  .team-description {
+    color: #a8a9b9;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 50px;
+    margin-bottom: 25px;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .social-links a {
+    width: 45px;
+    height: 45px;
+    background: #191b3b;
+    color: #514cff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 19px;
+    transition: 0.3s;
+  }
+
+  .social-links a:hover {
+    background: #514cff;
+    color: #fff;
+    transform: translateY(-3px);
+  }
+
+
+  .team-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 35px;
+    width: 100%;
+  }
+
+  .team-dot {
+    display: block;
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #2b2d68;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .team-dot.active {
+    background: #5b56ff;
+    transform: scale(1.15);
+  }
+
+  /* End Leadership Section */
+
+  @media (min-width: 768px) {
+
+    /* Header Section */
+    .navbar {
+      margin: 16px 3%;
+    }
+
+    .nav-box {
+      padding: 8px 20px;
+    }
+
+    /* End Header */
+
+    /* Start Leadership section */
+    .leadership {
+      padding: 35px 20px 50px;
+    }
+
+    .leadership-title {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    .team-slide {
+      flex: 0 0 50%;
+      padding: 0 12px;
+    }
+
+    .team-img {
+      height: 210px;
+    }
+
+    .team-content {
+      padding: 25px 24px 28px;
+    }
+
+    .team-name {
+      font-size: 23px;
+    }
+
+    /* End Leadership Section */
+
+
+  }
+
   /* Tablet */
   @media (min-width: 1024px) {
-      .leadership {
-    padding: 35px 0 55px;
-  }
 
-  .leadership-title {
-    font-size: 32px;
-    margin-bottom: 55px;
-  }
 
-  .team-slide {
-    flex: 0 0 33.333333%;
-    padding: 0 12px;
-  }
+    /* Start Header */
+    .navbar {
+      margin: 22px 3%;
+    }
 
-  .team-img {
-    height: 215px;
-  }
+    .navbar-brand {
+      font-size: 29px;
+    }
 
-  .team-content {
-    padding: 27px 26px 29px;
-  }
+    .nav-link {
+      padding: 10px 12px !important;
+    }
 
-  .team-name {
-    font-size: 24px;
-  }
+    .dropdown-item:hover {
+      background-color: lightsalmon;
+      color: #fff;
+    }
+
+    .dropdown .dropdown-menu {
+      display: none;
+    }
+
+    .dropdown:hover>.dropdown-menu,
+    .dropend:hover>.dropdown-menu {
+      display: block;
+      margin-top: 0.125em;
+      margin-left: 0.125em;
+    }
+
+    .dropend:hover>.dropdown-menu {
+      position: absolute;
+      top: 0;
+      left: -201px;
+    }
+
+    .dropend .dropdown-toggle {
+      margin-left: 0.5em;
+    }
+
+    /* End Header */
+
+    /* Start Leadership section */
+    .leadership {
+      padding: 35px 0 55px;
+    }
+
+    .leadership-title {
+      font-size: 32px;
+      margin-bottom: 55px;
+    }
+
+    .team-slide {
+      flex: 0 0 33.333333%;
+      padding: 0 12px;
+    }
+
+    .team-img {
+      height: 215px;
+    }
+
+    .team-content {
+      padding: 27px 26px 29px;
+    }
+
+    .team-name {
+      font-size: 24px;
+    }
+
+    /* End Leadership Section */
+
   }
 
 
 
   @media (min-width: 1366px) {
-      .leadership {
-    padding: 35px 0 55px;
-  }
 
-  .leadership-title {
-    font-size: 32px;
-    margin-bottom: 65px;
-  }
+    /* Start Header  */
 
-  .team-slide {
-    flex: 0 0 33.333333%;
-    padding: 0 12px;
-  }
+    .navbar {
+      margin: 23px 3%;
+    }
 
-  .team-img {
-    height: 225px;
-  }
+    .nav-box {
+      padding: 6px 10px;
+    }
 
-  .team-content {
-    padding: 27px 28px 29px;
-  }
+    .navbar-brand {
+      font-size: 29px;
+    }
 
-  .team-name {
-    font-size: 24px;
-  }
+    .nav-link {
+      padding: 10px 15px !important;
+    }
+
+    .get-btn {
+      padding: 11px 25px;
+    }
+
+    /* End Header */
+
+    /* Start Leadership Section */
+    .leadership {
+      padding: 35px 0 55px;
+    }
+
+    .leadership-title {
+      font-size: 32px;
+      margin-bottom: 65px;
+    }
+
+    .team-slide {
+      flex: 0 0 33.333333%;
+      padding: 0 12px;
+    }
+
+    .team-img {
+      height: 225px;
+    }
+
+    .team-content {
+      padding: 27px 28px 29px;
+    }
+
+    .team-name {
+      font-size: 24px;
+    }
+
+    /* End Leadership section */
+
+
   }
 </style>
 
 <body>
 
-<section class="leadership">
-  <div class="container">
 
-    <h2 class="leadership-title">
-      Leadership Team
-    </h2>
+  <!-- Start Header -->
+  <header class="header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid nav-box">
 
-    <div class="team-slider">
+        <a class="navbar-brand" href="#">Clarity</a>
 
-      <div class="team-track" id="teamTrack">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <!-- 1 -->
-        <div class="team-slide">
-          <div class="team-card">
-            <img
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
-              class="team-img"
-              alt="Alex Garcia"
-            >
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-auto gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
 
-            <div class="team-content">
-              <h3 class="team-name">Alex Garcia</h3>
+            <!-- Dropdown Start -->
 
-              <div class="team-role">
-                VP of Marketing
-              </div>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Dropdown 1</a></li>
+                 <li class="nav-item dropend">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Deep Dropdown
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Dropdown 1</a></li>
+                    <li><a class="dropdown-item" href="#">Dropdown 2</a></li>
+                    <li><a class="dropdown-item" href="#">Dropdown 3</a></li>
+                    <li><a class="dropdown-item" href="#">Dropdown 4</a></li>
+                  </ul>
+                </li>
 
-              <p class="team-description">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit
-                sed do eiusmod tempor incididunt ut labore.
-              </p>
-
-              <div class="social-links">
-                <a href="#">✉</a>
-                <a href="#">◎</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- 2 -->
-        <div class="team-slide">
-          <div class="team-card">
-            <img
-              src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=800&q=80"
-              class="team-img"
-              alt="Jennifer Walsh"
-            >
-
-            <div class="team-content">
-              <h3 class="team-name">Jennifer Walsh</h3>
-
-              <div class="team-role">
-                Chief Executive Officer
-              </div>
-
-              <p class="team-description">
-                Excepteur sint occaecat cupidatat non proident sunt in
-                culpa qui officia deserunt mollit anim id.
-              </p>
-
-              <div class="social-links">
-                <a href="#">✉</a>
-                <a href="#">in</a>
-              </div>
-            </div>
-          </div>
-        </div>
+                <li><a class="dropdown-item" href="#">Dropdown 2</a></li>
+                <li><a class="dropdown-item" href="#">Dropdown 3</a></li>
+                <li><a class="dropdown-item" href="#">Dropdown 4</a></li>
+                
+               
+              </ul>
+            </li>
+            <!-- Dropdown end  -->
 
 
-        <!-- 3 -->
-        <div class="team-slide">
-          <div class="team-card">
-            <img
-              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
-              class="team-img"
-              alt="Robert Martinez"
-            >
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
 
-            <div class="team-content">
-              <h3 class="team-name">Robert Martinez</h3>
-
-              <div class="team-role">
-                Chief Technology Officer
-              </div>
-
-              <p class="team-description">
-                Sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua ut enim ad minim veniam quis.
-              </p>
-
-              <div class="social-links">
-                <a href="#">✉</a>
-                <a href="#">●</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- 4 -->
-        <div class="team-slide">
-          <div class="team-card">
-            <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
-              class="team-img"
-              alt="Michael Brown"
-            >
-
-            <div class="team-content">
-              <h3 class="team-name">Michael Brown</h3>
-
-              <div class="team-role">
-                Product Director
-              </div>
-
-              <p class="team-description">
-                Building meaningful products and creating better
-                experiences for our customers worldwide.
-              </p>
-
-              <div class="social-links">
-                <a href="#">✉</a>
-                <a href="#">in</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- 5 -->
-        <div class="team-slide">
-          <div class="team-card">
-            <img
-              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
-              class="team-img"
-              alt="Sarah Wilson"
-            >
-
-            <div class="team-content">
-              <h3 class="team-name">Sarah Wilson</h3>
-
-              <div class="team-role">
-                Operations Head
-              </div>
-
-              <p class="team-description">
-                Leading teams and operations with a focus on
-                efficiency, growth and innovation.
-              </p>
-
-              <div class="social-links">
-                <a href="#">✉</a>
-                <a href="#">◎</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- 6 -->
-        <div class="team-slide">
-          <div class="team-card">
-            <img
-              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80"
-              class="team-img"
-              alt="Daniel Lee"
-            >
-
-            <div class="team-content">
-              <h3 class="team-name">Daniel Lee</h3>
-
-              <div class="team-role">
-                Creative Director
-              </div>
-
-              <p class="team-description">
-                Turning ideas into engaging digital experiences
-                through creativity and technology.
-              </p>
-
-              <div class="social-links">
-                <a href="#">✉</a>
-                <a href="#">●</a>
-              </div>
-            </div>
-          </div>
+          <a href="#" class="btn get-btn">Get Started</a>
         </div>
 
       </div>
+    </nav>
+  </header>
+
+  <!-- End Header Section -->
+
+
+
+  <!-- Start Leadership Section -->
+  <section class="leadership">
+    <div class="container">
+
+      <h2 class="leadership-title">
+        Leadership Team
+      </h2>
+
+      <div class="team-slider">
+
+        <div class="team-track" id="teamTrack">
+
+          <!-- 1 -->
+          <div class="team-slide">
+            <div class="team-card">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
+                class="team-img" alt="Alex Garcia">
+
+              <div class="team-content">
+                <h3 class="team-name">Alex Garcia</h3>
+
+                <div class="team-role">
+                  VP of Marketing
+                </div>
+
+                <p class="team-description">
+                  Lorem ipsum dolor sit amet consectetur adipiscing elit
+                  sed do eiusmod tempor incididunt ut labore.
+                </p>
+
+                <div class="social-links">
+                  <a href="#">✉</a>
+                  <a href="#">◎</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 2 -->
+          <div class="team-slide">
+            <div class="team-card">
+              <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=800&q=80"
+                class="team-img" alt="Jennifer Walsh">
+
+              <div class="team-content">
+                <h3 class="team-name">Jennifer Walsh</h3>
+
+                <div class="team-role">
+                  Chief Executive Officer
+                </div>
+
+                <p class="team-description">
+                  Excepteur sint occaecat cupidatat non proident sunt in
+                  culpa qui officia deserunt mollit anim id.
+                </p>
+
+                <div class="social-links">
+                  <a href="#">✉</a>
+                  <a href="#">in</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 3 -->
+          <div class="team-slide">
+            <div class="team-card">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
+                class="team-img" alt="Robert Martinez">
+
+              <div class="team-content">
+                <h3 class="team-name">Robert Martinez</h3>
+
+                <div class="team-role">
+                  Chief Technology Officer
+                </div>
+
+                <p class="team-description">
+                  Sed do eiusmod tempor incididunt ut labore et dolore
+                  magna aliqua ut enim ad minim veniam quis.
+                </p>
+
+                <div class="social-links">
+                  <a href="#">✉</a>
+                  <a href="#">●</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 4 -->
+          <div class="team-slide">
+            <div class="team-card">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+                class="team-img" alt="Michael Brown">
+
+              <div class="team-content">
+                <h3 class="team-name">Michael Brown</h3>
+
+                <div class="team-role">
+                  Product Director
+                </div>
+
+                <p class="team-description">
+                  Building meaningful products and creating better
+                  experiences for our customers worldwide.
+                </p>
+
+                <div class="social-links">
+                  <a href="#">✉</a>
+                  <a href="#">in</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 5 -->
+          <div class="team-slide">
+            <div class="team-card">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
+                class="team-img" alt="Sarah Wilson">
+
+              <div class="team-content">
+                <h3 class="team-name">Sarah Wilson</h3>
+
+                <div class="team-role">
+                  Operations Head
+                </div>
+
+                <p class="team-description">
+                  Leading teams and operations with a focus on
+                  efficiency, growth and innovation.
+                </p>
+
+                <div class="social-links">
+                  <a href="#">✉</a>
+                  <a href="#">◎</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 6 -->
+          <div class="team-slide">
+            <div class="team-card">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80"
+                class="team-img" alt="Daniel Lee">
+
+              <div class="team-content">
+                <h3 class="team-name">Daniel Lee</h3>
+
+                <div class="team-role">
+                  Creative Director
+                </div>
+
+                <p class="team-description">
+                  Turning ideas into engaging digital experiences
+                  through creativity and technology.
+                </p>
+
+                <div class="social-links">
+                  <a href="#">✉</a>
+                  <a href="#">●</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Dots -->
+      <div class="team-dots" id="teamDots">
+        <span class="team-dot active"></span>
+        <span class="team-dot"></span>
+        <span class="team-dot"></span>
+        <span class="team-dot"></span>
+      </div>
+
     </div>
+  </section>
 
-
-    <!-- Dots -->
-    <div class="team-dots" id="teamDots">
-      <span class="team-dot active"></span>
-      <span class="team-dot"></span>
-      <span class="team-dot"></span>
-      <span class="team-dot"></span>
-    </div>
-
-  </div>
-</section>
+  <!-- End Leadership Section -->
 
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-<script>
-// $(function () {
+  <script>
+    // $(function () {
 
-//   let $track = $('#teamTrack'),
-//       $slides = $track.children(),
-//       total = $slides.length,
-//       index = 0;
+    //   let $track = $('#teamTrack'),
+    //       $slides = $track.children(),
+    //       total = $slides.length,
+    //       index = 0;
 
-//   function show() {
-//     let count = $(window).width() < 768 ? 1 :
-//                 $(window).width() < 1024 ? 2 : 3;
+    //   function show() {
+    //     let count = $(window).width() < 768 ? 1 :
+    //                 $(window).width() < 1024 ? 2 : 3;
 
-//     $track.css({
-//       transition: 'transform .6s ease',
-//       transform: `translateX(-${index * (100 / count)}%)`
-//     });
+    //     $track.css({
+    //       transition: 'transform .6s ease',
+    //       transform: `translateX(-${index * (100 / count)}%)`
+    //     });
 
-//     if (index >= total) {
-//       setTimeout(() => {
-//         $track.css({
-//           transition: 'none',
-//           transform: 'translateX(0)'
-//         });
-//         index = 0;
-//       }, 650);
-//     }
-//   }
+    //     if (index >= total) {
+    //       setTimeout(() => {
+    //         $track.css({
+    //           transition: 'none',
+    //           transform: 'translateX(0)'
+    //         });
+    //         index = 0;
+    //       }, 650);
+    //     }
+    //   }
 
-//   // First slides clone — infinite loop
-//   $slides.slice(0, 3).clone().appendTo($track);
+    //   // First slides clone — infinite loop
+    //   $slides.slice(0, 3).clone().appendTo($track);
 
-//   setInterval(function () {
-//     index++;
-//     show();
-//   }, 3500);
+    //   setInterval(function () {
+    //     index++;
+    //     show();
+    //   }, 3500);
 
-// });
+    // });
 
-$(function () {
+    $(function () {
 
-  let $track = $('#teamTrack'),
-      $slides = $track.children(),
-      $dots = $('.team-dot'),
-      total = $slides.length,
-      index = 0;
-
-  // Clone first 3 slides
-  $slides.slice(0, 3).clone().appendTo($track);
-
-  function getCount() {
-    return $(window).width() < 768 ? 1 :
-           $(window).width() < 1024 ? 2 : 3;
-  }
-
-  function show() {
-
-    let count = getCount();
-    let position = index * (100 / count);
-
-    $track.css({
-      transition: 'transform .6s ease',
-      transform: `translateX(-${position}%)`
-    });
-
-    // Active dot
-    $dots.removeClass('active');
-
-    $dots.eq(index % $dots.length).addClass('active');
-
-    // Infinite loop
-    if (index >= total) {
-
-      setTimeout(function () {
-
-        $track.css({
-          transition: 'none',
-          transform: 'translateX(0)'
-        });
-
+      let $track = $('#teamTrack'),
+        $slides = $track.children(),
+        $dots = $('.team-dot'),
+        total = $slides.length,
         index = 0;
 
-        $dots.removeClass('active')
-             .eq(0)
-             .addClass('active');
+      // Clone first 3 slides
+      $slides.slice(0, 3).clone().appendTo($track);
 
-      }, 650);
-    }
-  }
+      function getCount() {
+        return $(window).width() < 768 ? 1 :
+          $(window).width() < 1024 ? 2 : 3;
+      }
 
-  // Auto slide
-  setInterval(function () {
-    index++;
-    show();
-  }, 3500);
+      function show() {
+
+        let count = getCount();
+        let position = index * (100 / count);
+
+        $track.css({
+          transition: 'transform .6s ease',
+          transform: `translateX(-${position}%)`
+        });
+
+        // Active dot
+        $dots.removeClass('active');
+
+        $dots.eq(index % $dots.length).addClass('active');
+
+        // Infinite loop
+        if (index >= total) {
+
+          setTimeout(function () {
+
+            $track.css({
+              transition: 'none',
+              transform: 'translateX(0)'
+            });
+
+            index = 0;
+
+            $dots.removeClass('active')
+              .eq(0)
+              .addClass('active');
+
+          }, 650);
+        }
+      }
+
+      // Auto slide
+      setInterval(function () {
+        index++;
+        show();
+      }, 3500);
 
 
-  // Dot click
-  $dots.click(function () {
+      // Dot click
+      $dots.click(function () {
 
-    index = $(this).index();
+        index = $(this).index();
 
-    show();
+        show();
 
-  });
+      });
 
-});
+    });
 
-</script>
+  </script>
 </body>
+
 </html>
